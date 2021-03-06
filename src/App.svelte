@@ -107,7 +107,8 @@
 			headerClass: "bordClass"
 		}
 	];
-	
+
+	/*****************************/
     import Test02 from './Test02.svelte';
 	export let name;
 	export let visible=false;
@@ -116,10 +117,13 @@
 		visible=true;
 	}
 
-	
+
+	/*****************************/
+	import TestMoveable from './TestMoveable.svelte'
+
 </script>
 
-<SvelteTable columns="{columns}" rows="{rows}" classNameRow="bordClass" ></SvelteTable>
+<TestMoveable></TestMoveable>
 
 <main>
 	<h1>Hello {name}!</h1>
@@ -127,8 +131,10 @@
 	<button on:click={handleClick}>OK</button>
 </main>
 
+<SvelteTable columns="{columns}" rows="{rows}" classNameRow="bordClass" ></SvelteTable>
+
 <style>
-	
+
 	:global(.bordClass) {
 		border-collapse: collapse;
 		border: #999999 1px solid;
